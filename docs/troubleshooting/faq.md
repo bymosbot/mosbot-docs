@@ -19,7 +19,7 @@ workspace browsing, and more in a single interface.
 
 Technically no — MosBot OS can run without OpenClaw, and basic features like task management, user
 management, and activity logs will function. However, **OpenClaw is strongly recommended** because
-the core value of MosBot OS — agent monitoring, workspace browsing, org chart, and skills management
+the core value of MosBot OS — agent monitoring, workspace browsing, agents page, and skills management
 — requires OpenClaw. Install OpenClaw first for the complete experience.
 
 ### Is MosBot OS production-ready?
@@ -58,7 +58,7 @@ running separately. See the local development guides in each repo.
 | MosBot API         | 3000                   |
 | MosBot Dashboard   | 5173 (dev) / 80 (prod) |
 | PostgreSQL         | 5432                   |
-| OpenClaw Workspace | 8080                   |
+| OpenClaw Workspace | 18780                  |
 | OpenClaw Gateway   | 18789                  |
 
 ### Can I use a custom domain?

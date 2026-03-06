@@ -70,15 +70,22 @@ Completed tasks are automatically archived after a configurable number of days.
 Required for workspace file browsing, skills management, and config editing. Without these
 variables, the workspace browser and skills features will be unavailable.
 
-| Variable                   | Default | Description                                                                          |
-| -------------------------- | ------- | ------------------------------------------------------------------------------------ |
-| `OPENCLAW_WORKSPACE_URL`   | —       | URL of the OpenClaw workspace service (e.g. `http://localhost:8080`)                 |
-| `OPENCLAW_WORKSPACE_TOKEN` | —       | Bearer token for workspace service authentication. Obtain from OpenClaw admin panel. |
+| Variable                       | Default | Description                                                                                                                                                                                                                                                           |
+| ------------------------------ | ------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `OPENCLAW_WORKSPACE_URL`       | —       | URL of the OpenClaw workspace service (e.g. `http://localhost:18780`)                                                                                                                                                                                                 |
+| `OPENCLAW_WORKSPACE_TOKEN`     | —       | Bearer token for workspace service authentication. Obtain from OpenClaw admin panel.                                                                                                                                                                                  |
+| `OPENCLAW_PATH_REMAP_PREFIXES` | `''`    | Comma-separated additional host path prefixes remapped to virtual workspace paths before allowlist checks. Built-ins are always active: `/home/node/.openclaw/workspace`, `~/.openclaw/workspace`, `/home/node/.openclaw`, `~/.openclaw` (most specific prefix wins). |
+
+Virtual path conventions:
+
+- Main workspace: `/workspace`
+- Sub-agent workspaces: `/workspace-<agent-id>`
+- Shared directories: `/projects`, `/skills`, `/docs`
 
 ## OpenClaw Gateway
 
 Required for agent monitoring, live session data, and runtime control. Without these variables, the
-org chart and agent monitoring features will be unavailable.
+agents page and agent monitoring features will be unavailable.
 
 | Variable                      | Default | Description                                                 |
 | ----------------------------- | ------- | ----------------------------------------------------------- |

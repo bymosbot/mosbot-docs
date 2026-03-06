@@ -5,7 +5,7 @@ sidebar_label: MosBot Required Config
 sidebar_position: 4
 ---
 
-MosBot API connects to OpenClaw via two services: the workspace service (port 8080) and the gateway
+MosBot API connects to OpenClaw via two services: the workspace service (port 18780) and the gateway
 (port 18789). Certain `openclaw.json` settings must be configured correctly for MosBot features to
 work. This page lists the settings that matter most.
 
@@ -126,7 +126,7 @@ activity tracking depends on this being enabled.
 
 ## Agents: workspace paths
 
-**Required for the workspace file browser and org chart.**
+**Required for the workspace file browser and agents page.**
 
 Each agent must have a `workspace` path that points to a real directory on the workspace filesystem:
 
@@ -152,7 +152,7 @@ directory or a 404.
 
 ## Agents: identity
 
-**Required for the org chart and agent selector.**
+**Required for the agents page and agent selector.**
 
 ```json
 {
@@ -171,7 +171,7 @@ directory or a 404.
 }
 ```
 
-MosBot reads `identity.name` and `identity.emoji` to display agents in the org chart and workspace
+MosBot reads `identity.name` and `identity.emoji` to display agents in the agents page and workspace
 selector. Without these, agents will show as their raw `id` with no icon.
 
 ---
@@ -350,8 +350,8 @@ The smallest `openclaw.json` that gives MosBot full functionality:
 | `gateway.auth.mode: "token"`            | Bearer token auth                 | Auth may fail         |
 | `tools.sessions.visibility: "agent"`    | Agent Monitor session data        | Empty session list    |
 | `tools.agentToAgent.enabled`            | Subagent tracking                 | Subagents not tracked |
-| `agents[].workspace`                    | Workspace browser, org chart      | 404 / empty workspace |
-| `agents[].identity`                     | Org chart display names           | Raw IDs, no icons     |
+| `agents[].workspace`                    | Workspace browser, agents page    | 404 / empty workspace |
+| `agents[].identity`                     | Agents page display names         | Raw IDs, no icons     |
 | `memory.qmd.paths`                      | Shared docs in agent memory       | No shared memory      |
 | `channels.telegram.accounts[].botToken` | Telegram integration              | Telegram disabled     |
 | `plugins.entries.telegram.enabled`      | Telegram plugin activation        | Telegram disabled     |
